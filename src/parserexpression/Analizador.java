@@ -85,7 +85,7 @@ public class Analizador {
                 if (m.find()){
                     finded = true;
                     tok = m.group().trim();
-                    if(tokenInfo.token != TokenValues.ESPACIO)
+                    if(tokenInfo.token != Values.ESPACIO)
                         tokens.add(new Token(tokenInfo.token,tok));
                     s = m.replaceFirst("");
                     break;
