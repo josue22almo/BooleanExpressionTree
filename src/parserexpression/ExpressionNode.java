@@ -7,12 +7,12 @@ package parserexpression;
 
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcantara Moreno
  */
 public interface ExpressionNode {
     
-   
-    
     public int getType();
     public boolean getValue(Frase frase);
+
+   // public void add(ExpressionNode expression, boolean b);
 }

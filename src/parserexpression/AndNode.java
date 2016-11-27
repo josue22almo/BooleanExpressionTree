@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package parserexpression;
-
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcántara Moreno
  */
 public class AndNode extends OperationExpressionNode{
     
@@ -28,7 +27,8 @@ public class AndNode extends OperationExpressionNode{
     public boolean getValue(Frase frase) {
        boolean b = true;
        for(Term term : terms){
-           if (term.negated) b = b && !term.expression.getValue(frase);
+           if (term.negated) 
+               b = b && !term.expression.getValue(frase);
            else b = b && term.expression.getValue(frase);
        }
        return b;

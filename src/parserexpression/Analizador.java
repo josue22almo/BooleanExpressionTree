@@ -9,7 +9,7 @@ import jdk.nashorn.internal.runtime.ParserException;
 
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcántara Moreno
  */
 public class Analizador {
     
@@ -41,19 +41,7 @@ public class Analizador {
           this.token = token;
         }
     }
-    
-   /* private class Token {
-        public final int token;
-        public final String sequence;
-
-        public Token(int token, String sequence) {
-          super();
-          this.token = token;
-          this.sequence = sequence;
-        }
-    }
-    */
-    
+      
     public Analizador() {
         tokenInfos = new ArrayList<>();
         tokens = new LinkedList<>();

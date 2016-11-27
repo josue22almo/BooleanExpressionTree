@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package parserexpression;
 
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcantara Moreno
  */
 public class OrNode extends OperationExpressionNode{
     
@@ -26,9 +22,10 @@ public class OrNode extends OperationExpressionNode{
 
     @Override
     public boolean getValue(Frase frase) {
-       boolean b = true;
+       boolean b = false;
        for(Term term : terms){
-           if (term.negated) b = b || !term.expression.getValue(frase);
+           if (term.negated) 
+               b = b || !term.expression.getValue(frase);
            else b = b || term.expression.getValue(frase);
        }
        return b;

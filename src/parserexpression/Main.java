@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package parserexpression;
 
 import java.util.LinkedList;
@@ -10,29 +6,31 @@ import jdk.nashorn.internal.runtime.ParserException;
 
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcantara Moreno
  */
 public class Main {
 
     public static void main(String[] args) throws Exception{
         //try{
-        Analizador analizador = new Analizador();
-        analizador.analizarExpresion("{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)) & !({p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)))");
-        ParserExpression parserExpression = new ParserExpression();
-        LinkedList <Token> l = analizador.getTokens();
-//            System.out.print(analizador.toString());
-        parserExpression.parse(l);
-        
         Frase frase = new Frase();
         frase.addPalabra("p1");
         frase.addPalabra("p2");
         frase.addPalabra("p3");
         frase.addPalabra("hola");
         frase.addPalabra("adios");
-        frase.addPalabra("juan");
+//        frase.addPalabra("juan");
+        Analizador analizador = new Analizador();
+        analizador.analizarExpresion("({p1 p2 p3} & (\"hola adios\" | pepe)) & !juan ");
+        ParserExpression parserExpression = new ParserExpression();
+        LinkedList <Token> l = analizador.getTokens();
+        ExpressionNode exp = parserExpression.parse(l);
+                System.out.println();
+        System.out.println("Boolean = " + exp.getValue(frase));
         
         
-        AndNode and2 = new AndNode();
+        
+        
+        /*AndNode and2 = new AndNode();
         SetExpressionNode juan = new SetExpressionNode();
         juan.addWord("juan");        
         and2.add(juan, true);
@@ -51,6 +49,6 @@ public class Main {
         p.addWord("p2");
         p.addWord("p3");
         and.add(p, false);    
-        System.out.println("Booelan = " + and.getValue(frase));
+        System.out.println("Booelan = " + and.getValue(frase));*/
     }
 }

@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package parserexpression;
 
 import java.util.LinkedList;
 
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcantara Moreno
  */
 public class SignedNode extends OperationExpressionNode {
 
@@ -23,8 +19,6 @@ public class SignedNode extends OperationExpressionNode {
         super(exp,signed);
     }
     
-    
-    
     @Override
     public int getType() {
         return Values.OPERATION_NODE;
@@ -32,9 +26,11 @@ public class SignedNode extends OperationExpressionNode {
 
     @Override
     public boolean getValue(Frase frase) {
-        boolean b = true;
-        for(ExpressionNode exp : operands){
-            b = b & exp.getValue(frase);
+        boolean b = false;
+        for(Term term : terms){
+            if (term.negated)
+                b = !term.expression.getValue(frase);
+            else b = term.expression.getValue(frase);
         }
         return b;
     }

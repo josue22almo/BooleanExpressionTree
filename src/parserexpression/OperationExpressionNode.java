@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package parserexpression;
 
 import java.util.LinkedList;
-
 /**
  *
- * @author alumne
+ * @author Josue Inaldo Alcantara Moreno
  */
 public abstract class OperationExpressionNode implements ExpressionNode{
     protected LinkedList<Term> terms;
