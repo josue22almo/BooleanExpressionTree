@@ -23,7 +23,7 @@ public class ParserExpression {
         top = this.tokens.get(0);
         ExpressionNode result = expression();
         if (top.token != Values.EPSILON)
-          throw new Exception("Unexpected symbol found " +  top.sequence);
+          throw new Exception("Símbolo inesperado" +  top.sequence);
         return result;
   }
 
@@ -72,7 +72,7 @@ public class ParserExpression {
                 nextToken();
                 exp = argument_comas();
                 if (top.token != Values.COMA) 
-                    throw new Exception("Se esperaban \", pero se ha encontrado " + top.sequence);
+                    throw new Exception("No se han encontrado las comillas de cierre");
                 nextToken();                
                 break;
             case Values.OC_BRACKET:
@@ -81,7 +81,7 @@ public class ParserExpression {
                 exp = argument_curly_brackets();
                 //argument_curly_brackets();
                 if (top.token != Values.CC_BRACKET) 
-                    throw new Exception("Se esperaba un }, pero se ha encontrado " + top.sequence);
+                    throw new Exception("No se han cerrado alguno de los curly brackets {}");
                 nextToken();
                 break;
             case Values.OPEN_BRACKET:
@@ -89,7 +89,7 @@ public class ParserExpression {
                 nextToken();
                 exp = expression();
                 if(top.token != Values.CLOSE_BRACKET)
-                    throw new Exception("Se esperaba un ), pero se ha encontrado " + top.sequence);
+                    throw new Exception("No se han cerrado alguno de los parentesis");
                 nextToken();
                 break;
             default:

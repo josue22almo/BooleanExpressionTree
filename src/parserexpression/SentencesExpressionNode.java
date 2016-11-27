@@ -30,7 +30,6 @@ public class SentencesExpressionNode extends ValueExpressionNode{
 
     @Override
     public boolean getValue(Frase f) {
-        System.out.println("Set expression node bool "+ frase.contains(frase));
         return f.contains(frase);
     }
     
