@@ -16,12 +16,12 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
         //try{
-     /*       Analizador analizador = new Analizador();
-            analizador.analizarExpresion("{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)) & !({p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)))");
-            ParserExpression parserExpression = new ParserExpression();
-            LinkedList <Token> l = analizador.getTokens();
+        Analizador analizador = new Analizador();
+        analizador.analizarExpresion("{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)) & !({p1 p2 p3} & (\"hola adiós\" | pepe) & !juan & !{p1 p2 p3} & (\"hola adiós\" | pepe) & !juan | (!juan & !{p1 p2 p3} & (\"hola adiós\" | pepe)))");
+        ParserExpression parserExpression = new ParserExpression();
+        LinkedList <Token> l = analizador.getTokens();
 //            System.out.print(analizador.toString());
-            parserExpression.parse(l);*/
+        parserExpression.parse(l);
         
         Frase frase = new Frase();
         frase.addPalabra("p1");
@@ -29,7 +29,7 @@ public class Main {
         frase.addPalabra("p3");
         frase.addPalabra("hola");
         frase.addPalabra("adios");
-        //frase.addPalabra("juan");
+        frase.addPalabra("juan");
         
         
         AndNode and2 = new AndNode();

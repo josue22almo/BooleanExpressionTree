@@ -11,15 +11,15 @@ import java.util.LinkedList;
  *
  * @author alumne
  */
-public class OperationNode extends OperationExpressionNode {
+public class SignedNode extends OperationExpressionNode {
 
     LinkedList<ExpressionNode> operands;
 
-    public OperationNode() {
+    public SignedNode() {
         this.operands = new LinkedList<>();
     }
 
-    OperationNode(ExpressionNode exp, boolean signed) {
+    SignedNode(ExpressionNode exp, boolean signed) {
         super(exp,signed);
     }
     

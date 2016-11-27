@@ -70,13 +70,10 @@ public class Analizador {
     }      
     
     public void analizarExpresion(String str) throws ParserException{
-        System.out.println("Preparando string");
         String s = preparedString(str);
-        System.out.println("str preparado");
         tokens.clear();
         String tok = "";    
         char t = ' ';
-        System.out.println("Analizando expresion");
         while(!s.equals("")){
             boolean finded = false;
             for (TokenInfo tokenInfo : tokenInfos){
@@ -94,7 +91,6 @@ public class Analizador {
             String j = "" + t;
             if (!finded) throw new ParserException("Caràcter inesperat en l'entrada: " + j);
         }
-        System.out.println("Expresion analizada");
     }
     
     private void add(String regex, int token) {
