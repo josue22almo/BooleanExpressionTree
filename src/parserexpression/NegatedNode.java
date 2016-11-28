@@ -7,15 +7,15 @@ import java.util.LinkedList;
  *
  * @author Josue Inaldo Alcantara Moreno
  */
-public class SignedNode extends OperationExpressionNode {
+public class NegatedNode extends OperationExpressionNode {
 
     LinkedList<ExpressionNode> operands;
 
-    public SignedNode() {
+    public NegatedNode() {
         this.operands = new LinkedList<>();
     }
 
-    SignedNode(ExpressionNode exp, boolean signed) {
+    NegatedNode(ExpressionNode exp, boolean signed) {
         super(exp,signed);
     }
     
