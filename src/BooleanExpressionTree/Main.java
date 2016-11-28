@@ -1,5 +1,5 @@
 
-package parserexpression;
+package BooleanExpressionTree;
 
 import java.util.LinkedList;
 
@@ -20,9 +20,9 @@ public class Main {
             frase.addPalabra("juan");
             Analizador analizador = new Analizador();
             analizador.analizarExpresion("({p1 p2 p3} & (\"hola adios\" | pepe)) & !juan ");
-            ParserExpression parserExpression = new ParserExpression();
+            BooleanTree parserExpression = new BooleanTree();
             LinkedList <Token> l = analizador.getTokens();
-            ExpressionNode exp = parserExpression.parse(l);
+            ExpressionNode exp = parserExpression.satisfy(l);
             System.out.println("Boolean = " + exp.getValue(frase));
         } catch(Exception e){
            System.out.println(e.getMessage());

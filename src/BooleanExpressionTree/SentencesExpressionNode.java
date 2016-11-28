@@ -1,5 +1,5 @@
 
-package parserexpression;
+package BooleanExpressionTree;
 
 /**
  *

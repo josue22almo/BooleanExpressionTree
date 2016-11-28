@@ -1,5 +1,5 @@
 
-package parserexpression;
+package BooleanExpressionTree;
 /**
  *
  * @author Josue Inaldo Alcantara Moreno
