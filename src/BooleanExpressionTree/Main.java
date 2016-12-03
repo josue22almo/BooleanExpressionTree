@@ -11,13 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
         try{
-            Frase frase = new Frase();
-            frase.addPalabra("p1");
-            frase.addPalabra("p2");
-            frase.addPalabra("p3");
-            frase.addPalabra("hola");
-            frase.addPalabra("adios");
-            frase.addPalabra("juan");
+            Frase frase = new Frase("p1 p3 hola adios p2 p3");
             Analizador analizador = new Analizador();
             analizador.analizarExpresion("({p1 p2 p3} & (\"hola adios\" | pepe)) & !juan ");
             BooleanTree parserExpression = new BooleanTree();
